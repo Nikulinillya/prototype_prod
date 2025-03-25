@@ -1,4 +1,5 @@
-*{
+/* Базові стилі */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,8 +7,8 @@
     color: white;
 }
 
-html{
-    cursor: crosshair ;
+html {
+    cursor: crosshair;
 }
 
 .container-main {
@@ -18,68 +19,54 @@ html{
     padding: 20px;
 }
 
-body{
+body {
     line-height: 1.6;
     transition: margin-left 0.3s;
     text-align: center;
     color: white;
 }
 
-.footer-div{
+.footer-div {
     width: 100%;
     height: 70px;
     background: #212121;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
-.navbar{
+/* Навігація */
+.navbar {
     position: fixed;
     width: 100%;
     display: flex;
     z-index: 1000;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px;
     background: #1a1a1a;
     color: white;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
-.navbar h2{
+.navbar h2 {
     font-size: 20px;
 }
 
-.navbar ul{
+.navbar ul {
     list-style-type: none;
     display: flex;
 }
 
-.navbar ul li{
+.navbar ul li {
     margin: 0 10px;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     color: white;
     text-decoration: none;
     padding: 5px;
 }
 
-.nav-button{
-    transition: 0.4s ease;
-}
-
-.nav-button:hover{
-    border: 1px solid white;
-    border-radius: 10px;
-    background: #303030;
-    box-shadow: 0px 0px 4px white;
-}
-
-.home-navbar{
-    position: fixed;
-    width: 100%;
-}
-
+/* Бічне меню */
 .sidebar {
     width: 250px;
     position: fixed;
@@ -95,15 +82,8 @@ body{
 
 .sidebar a {
     display: block;
-    color: white;
     padding: 10px;
-    text-decoration: none;
     font-size: 18px;
-}
-
-.sidebar a:hover {
-    background: #2d2d2d;
-    box-shadow: -2px 0px 4px white;
 }
 
 .menu-btn {
@@ -112,94 +92,61 @@ body{
     cursor: pointer;
     padding: 5px 10px;
     background: #292929;
-    color: white;
     border: none;
-    float: left;
     border-radius: 5px;
     z-index: 1000;
-    transition: 0.7s ease;
 }
 
-.menu-btn:hover {
-    border: 1px solid white;
-    box-shadow: 0px 0px 4px white;
-}
-
-
-
-
-
-
-h1{
+/* Основний контент */
+h1 {
     font-size: 35px;
     margin-bottom: 30px;
-    transition: 1.2s ease;
     border: 1px solid white;
     box-shadow: 0px 0px 6px white;
     border-radius: 20px;
 }
 
-h1:hover{
-    border-radius: 30%;
-}
-
-.a{
-    color: white;
-    background: #252525;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.7s ease;
-    font-size: 17px;
-    font-family: monospace;
-}
-
-.a:hover{
-    border: 1px solid white;
-    box-shadow: 0px 0px 6px white;
-    border-radius: 50px;
-    background: white;
-    color: black;
-}
-
-.nav{
-    margin: 30px 0;
-}
-
-p{
+p {
     font-size: 20px;
 }
 
+/* Адаптивність */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
 
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+    }
 
+    .navbar ul li {
+        margin: 5px 0;
+    }
 
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
 
-.flashing-border {
-    border: 4px solid #FFD700;
-    animation: flash 2s infinite alternate;
-    box-shadow: 0 0 10px #FFD700;
-    transition: box-shadow 0.3s ease-in-out;
-    z-index: 1;
-    top: 0;
-    max-width: 800px;
-    width: 100%;
-    background: #1b1b1b;
-    padding: 20px;
-    border-radius: 50px;
+    .menu-btn {
+        font-size: 18px;
+    }
 }
 
-@keyframes flash {
-    0% { 
-        border-color: #aa00ff;
-        box-shadow: 0 0 10px #aa00ff;
+@media (max-width: 480px) {
+    h1 {
+        font-size: 25px;
     }
-    50% { 
-        border-color: #f700ff;
-        box-shadow: 0 0 15px #f700ff;
+
+    .container-main {
+        padding: 10px;
     }
-    100% { 
-        border-color: #ff00bb;
-        box-shadow: 0 0 20px #ff00bb;
+
+    .menu-btn {
+        font-size: 16px;
     }
 }
