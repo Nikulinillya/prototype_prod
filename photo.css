@@ -1,4 +1,5 @@
-*{
+/* Основні стилі */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,8 +7,8 @@
     color: white;
 }
 
-html{
-    cursor: crosshair ;
+html {
+    cursor: crosshair;
 }
 
 .container-main {
@@ -18,66 +19,44 @@ html{
     padding: 20px;
 }
 
-body{
+body {
     line-height: 1.6;
     transition: margin-left 0.3s;
     text-align: center;
     color: white;
 }
 
-.footer-div{
+.footer-div {
     width: 100%;
     height: 70px;
     background: #212121;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
-.navbar{
+.navbar {
     position: fixed;
     width: 100%;
     display: flex;
-    z-index: 1000;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px;
     background: #1a1a1a;
-    color: white;
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    z-index: 1000;
 }
 
-.navbar h2{
-    font-size: 20px;
-}
-
-.navbar ul{
+.navbar ul {
     list-style-type: none;
     display: flex;
 }
 
-.navbar ul li{
+.navbar ul li {
     margin: 0 10px;
 }
 
-.navbar ul li a{
-    color: white;
+.navbar ul li a {
     text-decoration: none;
     padding: 5px;
-}
-
-.nav-button{
-    transition: 0.4s ease;
-}
-
-.nav-button:hover{
-    border: 1px solid #f700ff;
-    border-radius: 10px;
-    background: #303030;
-    box-shadow: 0px 0px 4px #f700ff;
-}
-
-.home-navbar{
-    position: fixed;
-    width: 100%;
 }
 
 .sidebar {
@@ -87,7 +66,6 @@ body{
     top: 50px;
     height: 100%;
     background: #1a1a1a;
-    color: white;
     transition: 0.3s;
     padding-top: 20px;
     box-shadow: 0px 10px 10px rgb(0, 0, 0);
@@ -95,7 +73,6 @@ body{
 
 .sidebar a {
     display: block;
-    color: white;
     padding: 10px;
     text-decoration: none;
     font-size: 18px;
@@ -103,7 +80,6 @@ body{
 
 .sidebar a:hover {
     background: #2d2d2d;
-    box-shadow: -2px 0px 4px #f700ff;
 }
 
 .menu-btn {
@@ -112,17 +88,9 @@ body{
     cursor: pointer;
     padding: 5px 10px;
     background: #292929;
-    color: white;
-    border: none;
-    float: left;
     border-radius: 5px;
     z-index: 1000;
     transition: 0.7s ease;
-}
-
-.menu-btn:hover {
-    border: 1px solid #f700ff;
-    box-shadow: 0px 0px 4px #f700ff;
 }
 
 .flashing-border {
@@ -130,8 +98,6 @@ body{
     animation: flash 2s infinite alternate;
     box-shadow: 0 0 10px #FFD700;
     transition: box-shadow 0.3s ease-in-out;
-    z-index: 1;
-    top: 0;
     max-width: 800px;
     width: 100%;
     background: #1b1b1b;
@@ -140,19 +106,48 @@ body{
 }
 
 @keyframes flash {
-    0% { 
+    0% {
         border-color: #aa00ff;
         box-shadow: 0 0 10px #aa00ff;
     }
-    50% { 
+    50% {
         border-color: #f700ff;
         box-shadow: 0 0 15px #f700ff;
     }
-    100% { 
+    100% {
         border-color: #ff00bb;
         box-shadow: 0 0 20px #ff00bb;
     }
 }
 
+/* Адаптивність */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .navbar ul {
+        flex-direction: column;
+    }
 
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+}
